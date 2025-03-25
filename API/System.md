@@ -314,14 +314,14 @@ console.log("Python eval result: " + result);
 对输入数据进行压缩并返回 `ArrayBuffer` 格式的压缩数据。  
 
 **参数**:  
-- `data` - `string` - 需要压缩的字符串数据。  
+- `data` - `ArrayBuffer` - 需要压缩的字符串数据。  
 
 **返回值**:  
 `ArrayBuffer` - 压缩后的二进制数据。  
 
 **示例代码**:  
 ```javascript
-let text = "Hello, this is a test string.";
+let bin;
 let compressedData = compress(text);
 console.log(compressedData);
 ```
