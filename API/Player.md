@@ -656,6 +656,8 @@ console.log("Inventory Slot Selected: " + didSelectSlot);
 **参数**:
 - `id` - `string` - 玩家唯一标识
 - `slot` - `number` - 物品栏栏位
+- `onlyClearContainer` - `boolean` - 是否仅清空容器，默认为 `false`（可选）
+- `dropAll` `boolean` - 是否丢弃所有物品，默认为 `true`（可选）
 
 **返回值**: `boolean` - 丢弃成功返回 `true`，否则返回 `false`
 
