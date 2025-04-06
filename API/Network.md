@@ -12,7 +12,7 @@
 
 **示例代码**:
 ```javascript
-let isGetRequestSent = curl_get("https://api.example.com", { "Authorization": "Bearer token" }, function(code,response) {
+let isGetRequestSent = curl_get("https://api.example.com", { "Authorization": "Bearer token" }, function(code,response,headers) {
     console.log("GET Response: ", response);
 });
 console.log("GET Request Sent: " + isGetRequestSent);
@@ -36,7 +36,7 @@ console.log("GET Request Sent: " + isGetRequestSent);
 
 **示例代码**:
 ```javascript
-let isPostRequestSent = curl_post("https://api.example.com", { "Authorization": "Bearer token" }, '{"key":"value"}', function(code,response) {
+let isPostRequestSent = curl_post("https://api.example.com", { "Authorization": "Bearer token" }, '{"key":"value"}', function(code,response,headers) {
     console.log("POST Response: ", response);
 });
 console.log("POST Request Sent: " + isPostRequestSent);
@@ -60,7 +60,7 @@ console.log("POST Request Sent: " + isPostRequestSent);
 
 **示例代码**:
 ```javascript
-let isPutRequestSent = curl_put("https://api.example.com", { "Authorization": "Bearer token" }, '{"key":"value"}', function(code,response) {
+let isPutRequestSent = curl_put("https://api.example.com", { "Authorization": "Bearer token" }, '{"key":"value"}', function(code,response,headers) {
     console.log("PUT Response: ", response);
 });
 console.log("PUT Request Sent: " + isPutRequestSent);
@@ -82,7 +82,7 @@ console.log("PUT Request Sent: " + isPutRequestSent);
 
 **示例代码**:
 ```javascript
-curl_get_game_api("https://api.example.com", function(code,response) {
+curl_get_game_api("https://api.example.com", function(code,response,headers) {
     console.log("Response: ", response);
 });
 ```
@@ -104,7 +104,7 @@ curl_get_game_api("https://api.example.com", function(code,response) {
 
 **示例代码**:
 ```javascript
-curl_post_game_api("https://api.example.com", '{"key":"value"}', function(code,response) {
+curl_post_game_api("https://api.example.com", '{"key":"value"}', function(code,response,headers) {
     console.log("Response: ", response);
 });
 ```
