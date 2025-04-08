@@ -39,6 +39,7 @@
   * [RPC通讯](Code/RPC.md)
   * [实体目标](Code/EntityTarget.md)
   * [告示牌编辑](Code/SignEdit.md)
+  * [快照创建与使用](Code/Snapshot.md)
 
 * 更新日志
 
