@@ -209,3 +209,103 @@ console.log("status: " + status);
 ```
 
 **注意事项**: 无
+
+---
+
+### createText
+
+**描述**:  
+创建一段文本并渲染到屏幕指定位置。
+
+**参数**:
+- `text` - `string` - 显示的文本内容
+- `alignment` - `string` - 对齐方式，可为 `"Left"`、`"Center"`、`"Right"`
+- `x` - `number` - 文本位置的 X 坐标
+- `y` - `number` - 文本位置的 Y 坐标
+
+**返回值**: `number` - 创建成功返回文本 ID（大于等于 0），失败返回 `-1`
+
+**示例代码**:
+```javascript
+let id = createText("Hello World", "Center", 100, 200);
+if (id >= 0) {
+    console.log("Text created with ID:", id);
+}
+```
+
+**注意事项**: 无
+
+---
+
+### updateTextContent
+
+**描述**:  
+更新指定文本对象的内容。
+
+**参数**:
+- `id` - `number` - 文本对象的 ID（由 `createText` 返回）
+- `text` - `string` - 新的文本内容
+
+**返回值**: 无
+
+**示例代码**:
+```javascript
+updateTextContent(id, "Updated Text");
+```
+
+---
+
+### updateTextPosition
+
+**描述**:  
+修改文本对象的位置坐标。
+
+**参数**:
+- `id` - `number` - 文本对象的 ID
+- `x` - `number` - 新的 X 坐标
+- `y` - `number` - 新的 Y 坐标
+
+**返回值**: 无
+
+**示例代码**:
+```javascript
+updateTextPosition(id, 150, 300);
+```
+
+---
+
+### updateTextColor
+
+**描述**:  
+修改文本颜色（支持透明度）。
+
+**参数**:
+- `id` - `number` - 文本对象的 ID
+- `r` - `number` - 红色通道 (0~1)
+- `g` - `number` - 绿色通道 (0~1)
+- `b` - `number` - 蓝色通道 (0~1)
+- `a` - `number` - 透明度 (0~1)
+
+**返回值**: 无
+
+**示例代码**:
+```javascript
+updateTextColor(id, 1.0, 0.0, 0.0, 1.0); // 红色，不透明
+```
+
+---
+
+### removeText
+
+**描述**:  
+移除指定 ID 的文本对象。
+
+**参数**:
+- `id` - `number` - 文本对象的 ID
+
+**返回值**: 无
+
+**示例代码**:
+```javascript
+removeText(id);
+```
