@@ -514,7 +514,7 @@ function onTouchMotionUpEvent(pointer, x, y) {
 
 **示例代码**:
 ```javascript
-function onSendServerPacket(id, name) {
+function onSendServerPacketEvent(id, name) {
     console.log("packet (" + id + ", " + name + ") ");
 }
 ```
@@ -535,7 +535,7 @@ function onSendServerPacket(id, name) {
 
 **示例代码**:
 ```javascript
-function onReceiveServerPacket(id, name) {
+function onReceiveServerPacketEvent(id, name) {
     console.log("packet (" + id + ", " + name + ") ");
 }
 ```
