@@ -749,4 +749,86 @@ console.log("status: " + status);
 
 **注意事项**: 确保传入的 NBT 数据字符串格式正确。
 
+---
 
+### setLocalPlayerGameType
+
+**描述**:
+设置当前本地玩家的游戏模式类型。
+
+**参数**:
+
+* `gameType` (`number`) - 要设置的游戏模式类型，常用取值如下：
+
+  * `0`：生存模式（Survival）
+  * `1`：创造模式（Creative）
+  * `2`：冒险模式（Adventure）
+  * `3`：旁观者模式（Spectator）
+
+**返回值**:
+无返回值。
+
+**示例代码**:
+
+```javascript
+setLocalPlayerGameType(1); // 将玩家设置为创造模式
+```
+
+**注意事项**:
+
+* 请确保传入的数值在合法范围内，否则可能导致行为异常或无效。
+* 该设置仅影响本地玩家。
+
+---
+
+### getLocalPlayerGameType
+
+**描述**:
+获取当前本地玩家的游戏模式类型。
+
+**参数**:
+无
+
+**返回值**:
+`number` - 返回玩家的游戏模式类型，通常对应以下数值：
+
+* `0`：生存模式（Survival）
+* `1`：创造模式（Creative）
+* `2`：冒险模式（Adventure）
+* `3`：旁观者模式（Spectator）
+* `-1`：获取失败或玩家不存在
+
+**示例代码**:
+
+```javascript
+let gameType = getLocalPlayerGameType();
+console.log("当前游戏模式类型为:", gameType);
+```
+
+**注意事项**:
+
+* 当玩家对象不存在时，将返回 `-1`。
+
+---
+
+### deleteContainer
+
+**描述**:
+清除本地玩家的容器管理器（Container Manager）。
+
+**参数**:
+无
+
+**返回值**:
+无返回值。
+
+**示例代码**:
+
+```javascript
+deleteContainer();
+```
+
+**注意事项**:
+
+* 该操作不可逆，请确保不再需要当前容器数据后再调用此函数。
+* 仅对本地玩家有效。

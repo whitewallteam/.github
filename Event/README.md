@@ -124,7 +124,7 @@ function onPlayerAttackEvent(playerId, targetId) {
 **参数**:
 - `playerId` - `string` - 玩家唯一标识
 
-**返回值**: 无
+**返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **示例代码**:
 ```javascript
@@ -623,4 +623,26 @@ function onContainerItemMoveEvent(slot, item) {
 ```
 
 **注意事项**: 无
+
+---
+
+## onImGuiRenderEvent
+
+**描述**: ImGui渲染事件。
+
+**参数**: 无
+
+**返回值**: 无
+
+**示例代码**:
+```javascript
+function onImGuiRenderEvent() {
+    console.log("ImGui render");
+    ImGui.Begin("Hello");
+    ImGui.Text("Hello World!");
+    ImGui.End();
+}
+```
+
+**注意事项**: 需要在事件内调用ImGui渲染函数。
 

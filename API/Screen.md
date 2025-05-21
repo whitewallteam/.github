@@ -309,3 +309,101 @@ updateTextColor(id, 1.0, 0.0, 0.0, 1.0); // 红色，不透明
 ```javascript
 removeText(id);
 ```
+
+---
+
+### updateTextScale
+
+**描述**:
+更新指定文本的缩放比例。
+
+**参数**:
+
+* `id` (`number`) - 文本标识符 ID。
+* `scale` (`number`) - 缩放比例，通常为正浮点数，例如 `1.0` 表示原始大小，`1.5` 表示放大 1.5 倍。
+
+**返回值**:
+无返回值。
+
+**示例代码**:
+
+```javascript
+updateTextScale(123, 1.2); // 将 ID 为 123 的文本缩放为原来的 1.2 倍
+```
+
+**注意事项**:
+
+* 传入参数必须为数字类型，否则函数不会执行任何操作。
+* 请确保 `id` 对应有效的文本元素。
+
+---
+
+### getScreenName
+
+**描述**:
+获取当前客户端正在显示的界面名称。
+
+**参数**:
+无
+
+**返回值**:
+`string` - 当前界面的名称，例如 `"start_screen"`、`"world_loading"` 等。
+
+**示例代码**:
+
+```javascript
+let screen = getScreenName();
+console.log("当前界面为:", screen);
+```
+
+**注意事项**:
+
+* 仅返回当前客户端的顶层界面名称，可能用于调试或状态判断。
+
+---
+
+### simulateButtonDown
+
+**描述**:
+模拟玩家按下某个按钮的操作。
+
+**参数**:
+
+* `button` (`string`) - 要模拟按下的按钮名称，例如 `"attack"`, `"jump"` 等。
+
+**返回值**:
+无返回值。
+
+**示例代码**:
+
+```javascript
+simulateButtonDown("jump");
+```
+
+**注意事项**:
+
+* 需要确保传入的按钮名称合法，否则不会执行任何操作。
+
+---
+
+### simulateButtonUp
+
+**描述**:
+模拟玩家松开某个按钮的操作。
+
+**参数**:
+
+* `button` (`string`) - 要模拟松开的按钮名称，例如 `"attack"`, `"jump"` 等。
+
+**返回值**:
+无返回值。
+
+**示例代码**:
+
+```javascript
+simulateButtonUp("jump");
+```
+
+**注意事项**:
+
+* 需要确保传入的按钮名称合法，否则不会执行任何操作。
