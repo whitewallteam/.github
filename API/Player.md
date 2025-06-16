@@ -532,17 +532,19 @@ moveInventoryItem(1,2);
 
 **示例代码**:  
 ```javascript
+const id = getLocalPlayerUniqueID();
+const item1 = getPlayerInventoryItem(id,0);
+const item2 = getPlayerInventoryItem(id,1);
+// 假设 item1 和 item2 已经被解析为物品对象
+const netid1 = item1.ExtraData.netId;
+const netid2 = item2.ExtraData.netId;
+
 moveContainerItem([
-  {
-    fromSlot: 1,
-    fromNetId: 1001,
-    fromContainerId: 1,
-    toSlot: 2,
-    toNetId: 1002,
-    toContainerId: 1,
-    count: 5
-  }
-]);
+    {
+        fromSlot:0,fromNetId:netid1,fromContainerId:7,
+        toSlot:1,toNetId:netid2,toContainerId:7,count:1
+    }
+])
 ```  
 
 **注意事项**:  
