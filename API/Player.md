@@ -522,10 +522,10 @@ moveInventoryItem(1,2);
 - `items` - `Array<Object>` - 需要移动的物品列表，每个对象包含以下字段：  
   - `fromSlot` - `number` - 源物品所在的格索引  
   - `fromNetId` - `number` - 源物品的网络 ID  
-  - `fromContainerId` - `number` - 源容器的 ID  
+  - `fromContainerId` - `ContainerID` - 源容器的 ID  
   - `toSlot` - `number` - 目标格索引  
   - `toNetId` - `number` - 目标物品的网络 ID（若目标格已有物品）  
-  - `toContainerId` - `number` - 目标容器的 ID  
+  - `toContainerId` - `ContainerID` - 目标容器的 ID  
   - `count` - `number` - 要移动的物品数量  
 
 **返回值**: 无  

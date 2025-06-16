@@ -796,3 +796,70 @@
 | button.toggle_raytracing             | 切换光线追踪模式   |
 | button.content_log_history_chord     | 内容日志记录快捷键  |
 
+## ContainerID
+
+| ID | 名称                                    | 描述（容器功能）      |
+|----|---------------------------------------|---------------|
+| 0  | `AnvilInputContainer`                 | 铁砧输入容器        |
+| 1  | `AnvilMaterialContainer`              | 铁砧材料容器        |
+| 2  | `AnvilResultPreviewContainer`         | 铁砧输出预览容器      |
+| 3  | `SmithingTableInputContainer`         | 锻造台输入容器       |
+| 4  | `SmithingTableMaterialContainer`      | 锻造台材料容器       |
+| 5  | `SmithingTableResultPreviewContainer` | 锻造台输出预览容器     |
+| 6  | `ArmorContainer`                      | 盔甲栏容器         |
+| 7  | `LevelEntityContainer`                | 实体容器          |
+| 8  | `BeaconPaymentContainer`              | 信标容器          |
+| 9  | `BrewingStandInputContainer`          | 酿造台输入容器       |
+| 10 | `BrewingStandResultContainer`         | 酿造台输出容器       |
+| 11 | `BrewingStandFuelContainer`           | 酿造台燃料容器       |
+| 12 | `CombinedHotbarAndInventoryContainer` | 快捷栏与背包组合容器    |
+| 13 | `CraftingInputContainer`              | 工作台输入容器       |
+| 14 | `CraftingOutputPreviewContainer`      | 工作台输出预览容器     |
+| 15 | `RecipeConstructionContainer`         | 合成书-建筑分类      |
+| 16 | `RecipeNatureContainer`               | 合成书-自然分类      |
+| 17 | `RecipeCustomContainer`               | 合成书-自定义分类     |
+| 18 | `RecipeItemsContainer`                | 合成书-物品列表      |
+| 19 | `RecipeSearchContainer`               | 合成书-搜索结果      |
+| 20 | `RecipeSearchBarContainer`            | 合成书-搜索栏       |
+| 21 | `RecipeEquipmentContainer`            | 合成书-装备分类      |
+| 22 | `RecipeBookContainer`                 | 合成书主容器        |
+| 23 | `EnchantingInputContainer`            | 附魔台输入容器       |
+| 24 | `EnchantingMaterialContainer`         | 附魔台材料（青金石）    |
+| 25 | `FurnaceFuelContainer`                | 熔炉燃料容器        |
+| 26 | `FurnaceIngredientContainer`          | 熔炉原料容器        |
+| 27 | `FurnaceResultContainer`              | 熔炉输出容器        |
+| 28 | `HorseEquipContainer`                 | 马具容器（鞍、马铠）    |
+| 29 | `HotbarContainer`                     | 快捷栏容器         |
+| 30 | `InventoryContainer`                  | 玩家背包容器        |
+| 31 | `ShulkerBoxContainer`                 | 潜影盒容器         |
+| 32 | `TradeIngredient1Container`           | 交易输入槽位 1      |
+| 33 | `TradeIngredient2Container`           | 交易输入槽位 2      |
+| 34 | `TradeResultPreviewContainer`         | 交易输出结果容器      |
+| 35 | `OffhandContainer`                    | 副手容器          |
+| 36 | `CompoundCreatorInput`                | 化合物创建器输入（教育版） |
+| 37 | `CompoundCreatorOutputPreview`        | 化合物创建器输出      |
+| 38 | `ElementConstructorOutputPreview`     | 元素构造器输出       |
+| 39 | `MaterialReducerInput`                | 材料还原器输入容器     |
+| 40 | `MaterialReducerOutput`               | 材料还原器输出容器     |
+| 41 | `LabTableInput`                       | 实验桌输入容器       |
+| 42 | `LoomInputContainer`                  | 织布机旗帜输入容器     |
+| 43 | `LoomDyeContainer`                    | 织布机染料容器       |
+| 44 | `LoomMaterialContainer`               | 织布机图案模板容器     |
+| 45 | `LoomResultPreviewContainer`          | 织布机输出预览容器     |
+| 46 | `BlastFurnaceIngredientContainer`     | 高炉原料容器        |
+| 47 | `SmokerIngredientContainer`           | 烟熏炉原料容器       |
+| 48 | `Trade2Ingredient1Container`          | 交易配方 2 输入 1   |
+| 49 | `Trade2Ingredient2Container`          | 交易配方 2 输入 2   |
+| 50 | `Trade2ResultPreviewContainer`        | 交易配方 2 输出容器   |
+| 51 | `GrindstoneInputContainer`            | 砂轮输入容器        |
+| 52 | `GrindstoneAdditionalContainer`       | 砂轮附加物品容器      |
+| 53 | `GrindstoneResultPreviewContainer`    | 砂轮输出容器        |
+| 54 | `StonecutterInputContainer`           | 切石机输入容器       |
+| 55 | `StonecutterResultPreviewContainer`   | 切石机输出容器       |
+| 56 | `CartographyInputContainer`           | 制图台输入容器（地图）   |
+| 57 | `CartographyAdditionalContainer`      | 制图台附加容器（玻璃板）  |
+| 58 | `CartographyResultPreviewContainer`   | 制图台输出容器       |
+| 59 | `BarrelContainer`                     | 木桶容器          |
+| 60 | `CursorContainer`                     | 鼠标指针物品容器      |
+| 61 | `CreatedOutputContainer`              | 创建输出容器（通用）    |
+| 62 | `SmithingTableTemplateContainer`      | 锻造台模板容器       |
