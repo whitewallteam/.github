@@ -78,9 +78,28 @@ console.log("Block NBT: ", blockNBT);
 
 **示例代码**:
 ```javascript
-let commandData = { /* Command Data */ };
+let commandData = { mode: "Tick", isRedStoneMode: false, isConditional: false, command: "say Hello, world!", lastOutput: "", name: "", tickDelay: 1, shouldTrackOutput: true, executeOnFirstTick: false };
 let isCommandBlockDataSet = setCommandBlockData(10, 64, 10, commandData);
 console.log("Command Block Data Set: " + isCommandBlockDataSet);
 ```
 
 **注意事项**: 确保有 op 权限。
+
+---
+
+### getBlockDestroyTime
+
+**描述**: 获取指定方块破坏时间。
+
+**参数**:
+- `blockName` - `string` - 方块名称
+- `itemName` - `string` - 物品名称
+- `properties` - `object` - 状态属性
+
+**返回值**: `number` - 破坏时间
+
+**示例代码**:
+```javascript
+let blockDestroyTime = getBlockDestroyTime("stone", "diamond_pickaxe", {haste: 0,conduit_power: 0,mining_efficiency: 0,mining_fatigue: 0});
+console.log("Block Destroy Time: " + blockDestroyTime);
+```

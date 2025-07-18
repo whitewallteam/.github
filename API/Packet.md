@@ -119,3 +119,22 @@ console.log("PlayerAuthInput Sent: " + result);
 
 **注意事项**: 确保提供有效的对象结构以避免发送失败。
 
+---
+
+### sendCommandRequest
+
+**描述**: 发送命令请求。
+
+**参数**:
+- `command` - `string` - 命令字符串
+
+**返回值**: `boolean` - 发送成功返回 `true`，否则返回 `false`
+
+**示例代码**:
+```javascript
+let isCommandSent = sendCommandRequest("/give @p diamond 64");
+console.log("Command Sent: " + isCommandSent);
+```
+
+**注意事项**: 无
+

@@ -37,17 +37,47 @@ console.log("World Player List: ", worldPlayerList);
 
 ### executeCommand
 
-**描述**: 执行命令。
+**描述**: 队列执行命令。
 
 **参数**:
 - `cmd` - `string` - 要执行的命令
 
-**返回值**: `boolean` - 命令执行成功返回 `true`，否则返回 `false`
+**返回值**: `boolean` - 命令加入队列成功返回 `true`，否则返回 `false`
 
 **示例代码**:
 ```javascript
 let isCommandExecuted = executeCommand("/give @p diamond 1");
 console.log("Command Executed: " + isCommandExecuted);
+```
+
+**注意事项**: 无
+
+---
+
+### requestExecuteCommand
+
+**描述**: 请求执行命令。
+
+**参数**:
+- `cmd` - `string` - 要执行的命令
+- `callback` - `function` - 命令执行完成时的回调函数
+
+**返回值**: 无。
+
+**示例代码**:
+```javascript
+requestExecuteCommand("/give @p diamond 1", function (result) {
+    console.log("type: " + result.type);
+    console.log("successCount: " + result.successCount);
+    console.log("hasPlayerText: " + result.hasPlayerText);
+    messages.forEach(function (message) {
+        console.log("type: " + message.type);
+        console.log("messageId: " + message.messageId);
+        message.params.forEach(function (param) {
+            console.log("paramType: " + param);
+        })
+    });
+});
 ```
 
 **注意事项**: 无

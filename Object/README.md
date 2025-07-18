@@ -1,4 +1,3 @@
-
 ## Pos
 
 | 名称 | 类型     | 描述  |
@@ -31,11 +30,15 @@
 
 ## Block
 
-| 名称        | 类型     | 描述   |
-|:----------|:-------|:-----|
-| namespace | string | 命名空间 |
-| id        | number | 唯一值  |
-| aux       | number | 特殊值  |
+| 名称              | 类型      | 描述     |
+|:----------------|:--------|:-------|
+| descriptionId   | string  | 翻译ID   |
+| descriptionName | string  | 当前翻译名称 |
+| namespace       | string  | 命名空间   |
+| id              | number  | 唯一值    |
+| aux             | number  | 特殊值    |
+| solid           | boolean | 是否为固体  |
+| runtimeId       | number  | 运行时ID  |
 
 ## File
 
@@ -134,50 +137,50 @@
 
 ## EntityEffect
 
-| 名称                              | 类型      | 描述                               |
-|-------------------------------------|-----------|------------------------------------|
-| id                               | number     | 药水效果的唯一标识符             |
-| duration                         | number     | 药水效果的持续时间（以游戏刻为单位） |
-| durationEasy                     | number     | 药水效果在“简单”难度下的持续时间  |
-| durationNormal                   | number     | 药水效果在“普通”难度下的持续时间  |
-| durationHard                     | number     | 药水效果在“困难”难度下的持续时间  |
-| amplifier                        | number     | 药水效果的强度等级                |
-| displayOnScreenTextureAnimation  | boolean    | 是否在屏幕上显示动画效果          |
-| ambient                          | boolean    | 是否为环境效果                    |
-| noCounter                        | boolean    | 是否不显示倒计时                  |
-| effectVisible                    | boolean    | 药水效果是否对玩家可见            |
+| 名称                              | 类型      | 描述                 |
+|---------------------------------|---------|--------------------|
+| id                              | number  | 药水效果的唯一标识符         |
+| duration                        | number  | 药水效果的持续时间（以游戏刻为单位） |
+| durationEasy                    | number  | 药水效果在“简单”难度下的持续时间  |
+| durationNormal                  | number  | 药水效果在“普通”难度下的持续时间  |
+| durationHard                    | number  | 药水效果在“困难”难度下的持续时间  |
+| amplifier                       | number  | 药水效果的强度等级          |
+| displayOnScreenTextureAnimation | boolean | 是否在屏幕上显示动画效果       |
+| ambient                         | boolean | 是否为环境效果            |
+| noCounter                       | boolean | 是否不显示倒计时           |
+| effectVisible                   | boolean | 药水效果是否对玩家可见        |
 
 ## SizeData
 
-| 名称                              | 类型      | 描述                               |
-|-------------------------------------|-----------|------------------------------------|
-| deviceWidth                               | number     | 设备屏幕宽度             |
-| deviceHeight                               | number     | 设备屏幕高度             |
-| screenWidth                               | number     | 游戏屏幕宽度             |
-| screenHeight                               | number     | 游戏屏幕高度             |
+| 名称           | 类型     | 描述     |
+|--------------|--------|--------|
+| deviceWidth  | number | 设备屏幕宽度 |
+| deviceHeight | number | 设备屏幕高度 |
+| screenWidth  | number | 游戏屏幕宽度 |
+| screenHeight | number | 游戏屏幕高度 |
 
 ### InputMode
 
-| 名称                 | 值 | 描述                 |
-|:-------------------|:---|:---------------------|
-| `Undefined`        | 0  | 未定义的输入模式       |
-| `Mouse`            | 1  | 鼠标输入模式           |
-| `Touch`            | 2  | 触控输入模式           |
-| `GamePad`          | 3  | 游戏手柄输入模式       |
-| `MotionController` | 4  | 运动控制器输入模式     |
+| 名称                 | 值 | 描述        |
+|:-------------------|:--|:----------|
+| `Undefined`        | 0 | 未定义的输入模式  |
+| `Mouse`            | 1 | 鼠标输入模式    |
+| `Touch`            | 2 | 触控输入模式    |
+| `GamePad`          | 3 | 游戏手柄输入模式  |
+| `MotionController` | 4 | 运动控制器输入模式 |
 
 ### PlayMode
 
-| 名称                     | 值 | 描述                     |
-|:-----------------------|:---|:-------------------------|
-| `Normal`              | 0  | 正常模式                   |
-| `Teaser`              | 1  | 预告模式                   |
-| `Screen`              | 2  | 屏幕模式                   |
-| `Viewer`              | 3  | 观众模式                   |
-| `Reality`             | 4  | 现实模式                   |
-| `Placement`           | 5  | 放置模式                   |
-| `LivingRoom`          | 6  | 客厅模式                   |
-| `ExitLevel`           | 7  | 退出关卡模式               |
-| `ExitLevelLivingRoom` | 8  | 退出客厅关卡模式           |
+| 名称                    | 值 | 描述       |
+|:----------------------|:--|:---------|
+| `Normal`              | 0 | 正常模式     |
+| `Teaser`              | 1 | 预告模式     |
+| `Screen`              | 2 | 屏幕模式     |
+| `Viewer`              | 3 | 观众模式     |
+| `Reality`             | 4 | 现实模式     |
+| `Placement`           | 5 | 放置模式     |
+| `LivingRoom`          | 6 | 客厅模式     |
+| `ExitLevel`           | 7 | 退出关卡模式   |
+| `ExitLevelLivingRoom` | 8 | 退出客厅关卡模式 |
 
 

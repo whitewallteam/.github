@@ -378,8 +378,7 @@ setInputModeFloatOption(1, {
   defaultValues: [
     { id: 1, value: 0.5 },
     { id: 2, value: 0.75 }
-  ]
-}, minValue: 0.0, maxValue: 2.0);
+  ], minValue: 0.0, maxValue: 2.0});
 ```
 
 **注意事项**: 确保提供有效的选项 ID、合理的浮点值以及合适的最小和最大值，以确保输入模式浮点选项被正确更新。
@@ -493,6 +492,47 @@ if (isInGame()) {
 } else {
     console.log("Player is not in the game.");
 }
+```
+**注意事项**:
+- 无。
+
+---
+
+### getLanguageString
+
+**描述**:  
+获取指定语言字符串的翻译。
+
+**参数**:  
+- `key` - `string` - 语言字符串的键。
+
+**返回值**:  
+`string` - 语言字符串的翻译。
+
+**示例代码**:  
+```javascript
+let translatedString = getLanguageString("key");
+console.log(translatedString);
+```
+**注意事项**:
+- 无。
+
+---
+
+### setLanguageString
+
+**描述**:  
+设置指定语言字符串的翻译。
+
+**参数**:  
+- `key` - `string` - 语言字符串的键。
+- `value` - `string` - 语言字符串的翻译。
+
+**返回值**: 无返回值。
+
+**示例代码**:  
+```javascript
+setLanguageString("key", "翻译");
 ```
 **注意事项**:
 - 无。

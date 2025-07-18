@@ -1,4 +1,23 @@
 
+### require
+
+**描述**: 引入模块。
+
+**参数**:
+- `moduleName` - `string` - 模块名称
+
+**返回值**: `any` - 模块的导出对象
+
+**示例代码**:
+```javascript
+let myModule = require("myModule");
+console.log(myModule.hello());
+```
+
+**注意事项**: 确保模块名称正确且模块存在。
+
+---
+
 ### exit
 
 **描述**: 退出脚本并且销毁实例。
@@ -398,4 +417,64 @@ loadSnapshot(bin, 'main()');
 **注意事项**:  
 - `code` 用来调用快照中定义的函数。
 
+---
 
+### System.syscall
+
+**描述**: 系统调用。
+
+**参数**:
+- `lib` - `string` - 库名称
+- `func` - `string` - 函数名称
+- `args` - `any[]` - 函数参数
+
+**返回值**: `any` - 函数返回值指针
+
+**示例代码**:
+```javascript
+let result = System.syscall('libc.so','malloc', 100);
+console.log(result);
+```
+
+**注意事项**: 请谨慎使用系统调用，可能会导致程序崩溃或数据丢失。
+
+---
+
+### System.readAddress
+
+**描述**: 读取指针指向的数据。
+
+**参数**:
+- `ptr` - `number` - 指针
+- `size` - `number` - 读取字节数
+
+**返回值**: `ArrayBuffer` - 读取的数据
+
+**示例代码**:
+```javascript
+let ptr = System.syscall('libc.so','malloc', 100);
+let data = System.readAddress(ptr, 100);
+console.log(data);
+```
+
+**注意事项**: 请谨慎使用该方法，可能会导致程序崩溃或数据丢失。
+
+### System.writeAddress
+
+**描述**: 写入数据到指针指向的内存。
+
+**参数**:
+- `ptr` - `number` - 指针
+- `size` - `number` - 写入字节数
+- `data` - `ArrayBuffer` - 写入的数据
+
+**返回值**: `void` - 无返回值
+
+**示例代码**:
+```javascript
+let ptr = System.syscall('libc.so','malloc', 100);
+let data = new ArrayBuffer(100);
+System.writeAddress(ptr, 100, data);
+```
+
+**注意事项**: 请谨慎使用该方法，可能会导致程序崩溃或数据丢失。
