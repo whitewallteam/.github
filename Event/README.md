@@ -300,13 +300,14 @@ function onEntityBehaviorEvent(id, behavior, value) {
 **参数**:
 - `id` - `number` - RPC ID
 - `data` - `string` - RPC 数据
+- `json` - `string` - RPC JSON数据
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **示例代码**:
 ```javascript
-function onPyRpcSendEvent(id, data) {
-    console.log(`PyRpc send: id=${id}, data=${data}`);
+function onPyRpcSendEvent(id, data, json) {
+    console.log(`PyRpc send: id=${id}, data=${data} json=${json}`);
     return false; // 不拦截事件
 }
 ```
@@ -322,13 +323,14 @@ function onPyRpcSendEvent(id, data) {
 **参数**:
 - `id` - `number` - RPC ID
 - `data` - `string` - RPC 数据
+- `json` - `string` - RPC JSON数据
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **示例代码**:
 ```javascript
-function onPyRpcReceiveEvent(id, data) {
-    console.log(`PyRpc receive: id=${id}, data=${data}`);
+function onPyRpcReceiveEvent(id, data, json) {
+    console.log(`PyRpc receive: id=${id}, data=${data} json=${json}`);
     return false; // 不拦截事件
 }
 ```

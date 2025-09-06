@@ -554,6 +554,47 @@ moveContainerItem([
 
 ---  
 
+### swapContainerItem
+
+**描述**:  
+交换两个容器内的物品。  
+
+**参数**:
+- `items` - `Array<Object>` - 需要移动的物品列表，每个对象包含以下字段：
+    - `fromSlot` - `number` - 源物品所在的格索引
+    - `fromNetId` - `number` - 源物品的网络 ID
+    - `fromContainerId` - `ContainerID` - 源容器的 ID
+    - `toSlot` - `number` - 目标格索引
+    - `toNetId` - `number` - 目标物品的网络 ID（若目标格已有物品）
+    - `toContainerId` - `ContainerID` - 目标容器的 ID
+    - `count` - `number` - 要移动的物品数量
+
+**返回值**: 无
+
+**示例代码**:
+```javascript
+const id = getLocalPlayerUniqueID();
+const item1 = getPlayerInventoryItem(id,0);
+const item2 = getPlayerInventoryItem(id,1);
+// 假设 item1 和 item2 已经被解析为物品对象
+const netid1 = item1.ExtraData.netId;
+const netid2 = item2.ExtraData.netId;
+
+swapContainerItem([
+    {
+        fromSlot:0,fromNetId:netid1,fromContainerId:7,
+        toSlot:1,toNetId:netid2,toContainerId:7,count:1
+    }
+])
+```
+
+**注意事项**:
+- 确保源容器和目标容器均已打开，否则操作无效。
+- `count` 不应超过 `fromSlot` 位置的物品数量，否则可能导致异常行为。
+- 若 `toSlot` 已有物品，可能进行交换、合并或覆盖，具体行为取决于实现逻辑。
+
+---
+
 ### getPlayerInventoryItem
 
 **描述**: 获取玩家背包指定格数物品数据。
