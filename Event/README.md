@@ -612,15 +612,23 @@ function onSAuthJsonHook(json) {
 **描述**: 容器物品移动事件。
 
 **参数**:
+- `containerName` (string): 来源容器名称。
 - `slot` (number): 所在容器格子。
 - `item` (string): 物品数据。
 
 **返回值**: `boolean` - 返回 `true` 移动物品，返回 `false` 继续执行
 
+**返回值**: `object` - `containerName` 移动到指定容器
+
 **示例代码**:
 ```javascript
-function onContainerItemMoveEvent(slot, item) {
-    console.log("slot (" + slot + ") " + item);
+function onContainerItemMoveEvent(containerName, slot, item) {
+    console.log(containerName + " slot (" + slot + ") " + item);
+}
+```
+```javascript
+function onContainerItemMoveEvent(containerName, slot, item) {
+    return {containerName: "combined_hotbar_and_inventory_items"}
 }
 ```
 
