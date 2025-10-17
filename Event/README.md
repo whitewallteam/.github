@@ -559,6 +559,7 @@ function onTouchMotionUpEvent(pointer, x, y) {
 - `name` (string): 名称。
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
+
 **返回值**: `number` - 重复发送次数
 
 **示例代码**:
