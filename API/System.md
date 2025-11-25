@@ -128,6 +128,181 @@ console.log("Is Data Set: " + isSet);
 
 ---
 
+### playSound
+
+**描述**: 播放音频。支持通过文件路径或字节缓冲区播放音频。
+
+**参数**:
+
+* `source` - `string | ByteBuffer`
+
+    * 当为 `string` 时，代表音频文件路径
+    * 当为 `ByteBuffer` 时，将以内存数据方式创建音频，并返回音频 ID
+
+**返回值**:
+
+* `number | void`
+
+    * 如果参数为 `ByteBuffer`，返回创建的音频 ID（`number`）
+    * 如果参数为 `string`，无返回值
+
+**示例代码**:
+
+```javascript
+// 播放路径音频
+playSound("sounds/bgm.mp3");
+
+// 播放内存音频并获取ID
+let id = playSound(buffer);
+```
+
+**注意事项**:
+
+* 必须提供至少 1 个参数。
+* 字节缓冲区方式播放会创建独立音频对象，需要手动控制播放状态。
+
+---
+
+### setSoundPaused
+
+**描述**: 设置指定音频是否暂停。
+
+**参数**:
+
+* `id` - `number` - 音频 ID
+* `paused` - `boolean` - 是否暂停播放
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+setSoundPaused(id, true);  // 暂停
+setSoundPaused(id, false); // 继续播放
+```
+
+**注意事项**:
+
+* 调用时必须传入音频 ID 和布尔值。
+* 若 ID 无效则不会产生效果。
+
+---
+
+### isPlayingSound
+
+**描述**: 判断音频是否正在播放。
+
+**参数**:
+
+* `id` - `number` - 音频 ID
+
+**返回值**: `boolean` - 音频是否处于播放状态
+
+**示例代码**:
+
+```javascript
+if (isPlayingSound(id)) {
+    console.log("正在播放");
+}
+```
+
+**注意事项**:
+
+* 仅对有效的音频 ID 生效。
+
+---
+
+### stopSound
+
+**描述**: 停止播放指定音频。
+
+**参数**:
+
+* `id` - `number` - 音频 ID
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+stopSound(id);
+```
+
+**注意事项**:
+
+* 调用该方法会让音频立即停止播放。
+
+---
+
+### getSoundPosition
+
+**描述**: 获取音频当前播放位置（单位：毫秒）。
+
+**参数**:
+
+* `id` - `number` - 音频 ID
+
+**返回值**: `number` - 当前播放位置（ms）
+
+**示例代码**:
+
+```javascript
+let pos = getSoundPosition(id);
+console.log("当前播放位置:", pos);
+```
+
+**注意事项**:
+
+* 仅对有效音频 ID 返回正确值。
+
+---
+
+### setSoundPosition
+
+**描述**: 设置音频播放进度（单位：毫秒）。
+
+**参数**:
+
+* `id` - `number` - 音频 ID
+* `position` - `number` - 目标播放位置（ms）
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+setSoundPosition(id, 5000); // 跳转至 5 秒处
+```
+
+**注意事项**:
+
+* 必须传入两个参数，否则无操作。
+
+---
+
+### getSoundLength
+
+**描述**: 获取音频总时长（单位：毫秒）。
+
+**参数**:
+
+* `id` - `number` - 音频 ID
+
+**返回值**: `number` - 音频长度（ms）
+
+**示例代码**:
+
+```javascript
+let len = getSoundLength(id);
+console.log("音频总时长:", len);
+```
+
+**注意事项**:
+
+* 若 ID 无效，返回空值。
+
+---
+
 ### thread
 
 **描述**: 创建新线程。
