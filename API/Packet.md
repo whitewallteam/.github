@@ -156,3 +156,363 @@ console.log("Command Sent: " + isCommandSent);
 
 **注意事项**: 无
 
+---
+
+## Packet
+
+**描述**:
+用于构建并发送自定义网络数据包的对象。通过一系列 `write*` 方法向包中写入二进制数据，最后使用 `send` 方法发送给本地玩家。
+
+**构造方式**:
+
+```javascript
+let packet = new Packet();
+```
+
+**注意事项**:
+
+* 必须使用 `new Packet()` 创建实例。
+* `Packet` 内部维护一个二进制流，调用 `destroy` 后实例不可再使用。
+
+---
+
+### Packet.send
+
+**描述**:
+根据指定的数据包 ID 发送当前构建好的数据包。
+
+**参数**:
+
+* `packetId` - `number` - 数据包 ID（MinecraftPacketIds）
+
+**返回值**:
+
+* `boolean`
+
+    * `true`：发送成功
+    * `false`：发送失败
+
+**示例代码**:
+
+```javascript
+let packet = new Packet();
+packet.writeVarInt(123);
+let result = packet.send(0x01);
+```
+
+**注意事项**:
+
+* 必须在写入完所有数据后再调用。
+* 若 `Packet` 已被销毁，将抛出异常。
+
+---
+
+### Packet.destroy
+
+**描述**:
+销毁当前 `Packet` 对象并释放内部资源。
+
+**参数**: 无
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.destroy();
+```
+
+**注意事项**:
+
+* 调用后该 `Packet` 实例不可再使用。
+
+---
+
+### Packet.writeByte
+
+**描述**:
+向数据包写入一个有符号 8 位整数。
+
+**参数**:
+
+* `value` - `number` - `int8` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeByte(-5);
+```
+
+**注意事项**:
+
+* 参数会被截断为 8 位。
+
+---
+
+### Packet.writeBool
+
+**描述**:
+向数据包写入一个布尔值。
+
+**参数**:
+
+* `value` - `boolean` - 布尔值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeBool(true);
+```
+
+**注意事项**: 无
+
+---
+
+### Packet.writeDouble
+
+**描述**:
+向数据包写入一个双精度浮点数。
+
+**参数**:
+
+* `value` - `number` - `double` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeDouble(3.1415926);
+```
+
+**注意事项**: 无
+
+---
+
+### Packet.writeFloat
+
+**描述**:
+向数据包写入一个单精度浮点数。
+
+**参数**:
+
+* `value` - `number` - `float` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeFloat(1.5);
+```
+
+**注意事项**:
+
+* 精度为单精度浮点。
+
+---
+
+### Packet.writeVarInt
+
+**描述**:
+向数据包写入一个变长编码的 32 位整数（VarInt）。
+
+**参数**:
+
+* `value` - `number` - `int32` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeVarInt(300);
+```
+
+**注意事项**:
+
+* 使用 VarInt 编码，适合小整数传输。
+
+---
+
+### Packet.writeVarInt64
+
+**描述**:
+向数据包写入一个变长编码的 64 位整数（VarInt64）。
+
+**参数**:
+
+* `value` - `bigint` - `int64` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeVarInt64(1234567890123n);
+```
+
+**注意事项**:
+
+* 必须传入 `BigInt` 类型。
+
+---
+
+### Packet.writeSignedInt
+
+**描述**:
+向数据包写入一个有符号 32 位整数。
+
+**参数**:
+
+* `value` - `number` - `int32` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeSignedInt(-100);
+```
+
+**注意事项**: 无
+
+---
+
+### Packet.writeSignedInt64
+
+**描述**:
+向数据包写入一个有符号 64 位整数。
+
+**参数**:
+
+* `value` - `bigint` - `int64` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeSignedInt64(-999999999n);
+```
+
+**注意事项**:
+
+* 参数必须为 `BigInt`。
+
+---
+
+### Packet.writeSignedShort
+
+**描述**:
+向数据包写入一个有符号 16 位整数。
+
+**参数**:
+
+* `value` - `number` - `int16` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeSignedShort(32000);
+```
+
+**注意事项**:
+
+* 超出范围的值将被截断。
+
+---
+
+### Packet.writeUnsignedChar
+
+**描述**:
+向数据包写入一个无符号 8 位整数。
+
+**参数**:
+
+* `value` - `number` - `uint8` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeUnsignedChar(255);
+```
+
+**注意事项**:
+
+* 有效范围为 `0 ~ 255`。
+
+---
+
+### Packet.writeUnsignedShort
+
+**描述**:
+向数据包写入一个无符号 16 位整数。
+
+**参数**:
+
+* `value` - `number` - `uint16` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeUnsignedShort(65535);
+```
+
+**注意事项**: 无
+
+---
+
+### Packet.writeUnsignedInt
+
+**描述**:
+向数据包写入一个无符号 32 位整数。
+
+**参数**:
+
+* `value` - `number` - `uint32` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeUnsignedInt(4294967295);
+```
+
+**注意事项**:
+
+* JavaScript `number` 精度有限，避免超大值。
+
+---
+
+### Packet.writeUnsignedInt64
+
+**描述**:
+向数据包写入一个无符号 64 位整数。
+
+**参数**:
+
+* `value` - `bigint` - `uint64` 值
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+packet.writeUnsignedInt64(18446744073709551615n);
+```
+
+**注意事项**:
+
+* 必须使用 `BigInt` 表示。
