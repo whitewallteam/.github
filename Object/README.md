@@ -100,14 +100,23 @@
 
 ## PlayerAuthInput
 
-| 名称         | 类型       | 描述                      |
-|:-----------|:---------|:------------------------|
-| rot        | Rot      | 视角                      |
-| pos        | Pos      | 坐标                      |
-| delta      | Velocity | 移动值                     |
-| analogMove | Input    | 移动输入值                   |
-| moveVec    | Input    | 移动输入值                   |
-| flags      | number   | 操作标志组(PlayerInputFlags) |
+| 名称                     | 类型        | 描述                      |
+|:-----------------------|:----------|:------------------------|
+| rot                    | Rot       | 视角                      |
+| pos                    | Pos       | 坐标                      |
+| delta                  | Velocity  | 移动值                     |
+| analogMove             | Input     | 移动输入值                   |
+| moveVec                | Input     | 移动输入值                   |
+| rawMoveVec             | Input     | 移动输入值                   |
+| interactRotation       | Rot       | 交互视角                    |
+| vehicleRotation        | Rot       | 载具视角                    |
+| cameraOrientation      | Rot       | 相机视角                    |
+| clientPredictedVehicle | string    | 客户端预测载具                 |
+| clientTick             | number    | 客户端游戏刻                  |
+| newInteractionModel    | number    | 新交互模型                   |
+| inputData              | number    | 操作标志组(PlayerInputFlags) |
+| inputMode              | InputMode | 输入模式                    |
+| playMode               | PlayMode  | 游戏模式                    |
 
 ## PlayerInput
 
