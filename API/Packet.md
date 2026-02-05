@@ -115,7 +115,6 @@ console.log("PlayerAction Sent: " + send);
 - `analogMoveVector` - `Velocity` (可选) - 模拟移动向量，包含 `x` 和 `y`。
 - `vehicleRotation` - `Rot` (可选) - 载具旋转，包含 `yaw` 和 `pitch`。
 - `move` - `Object` (可选) - 玩家移动数据，包含 `x` 和 `y`。
-- `gazeDir` - `Object` (可选) - 玩家视线方向，包含 `x`, `y`, `z`。
 - `inputMode` - `InputMode` (可选) - 输入模式，默认为触控。
 - `playMode` - `PlayMode` (可选) - 游戏模式，默认为屏幕模式。
 - `newInteractionModel` - `number` (可选) - 新交互模型，默认为经典模型。
