@@ -557,15 +557,18 @@ function onTouchMotionUpEvent(pointer, x, y) {
 
 - `id` (number): 唯一id。
 - `name` (string): 名称。
+- `bin` (arrayBuffer): 原始数据。
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **返回值**: `number` - 重复发送次数
 
+**返回值**: `arrayBuffer` - 替换原始数据
+
 **示例代码**:
 
 ```javascript
-function onSendServerPacketEvent(id, name) {
+function onSendServerPacketEvent(id, name, bin) {
     console.log("packet (" + id + ", " + name + ") ");
 }
 ```
@@ -582,13 +585,16 @@ function onSendServerPacketEvent(id, name) {
 
 - `id` (number): 唯一id。
 - `name` (string): 名称。
+- `bin` (arrayBuffer): 原始数据。
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
+
+**返回值**: `arrayBuffer` - 替换原始数据
 
 **示例代码**:
 
 ```javascript
-function onReceiveServerPacketEvent(id, name) {
+function onReceiveServerPacketEvent(id, name, bin) {
     console.log("packet (" + id + ", " + name + ") ");
 }
 ```

@@ -114,7 +114,11 @@ console.log("PlayerAction Sent: " + send);
 - `motion` - `Velocity` (可选) - 玩家运动，包含 `x`, `y`, `z` 运动数据。
 - `analogMoveVector` - `Velocity` (可选) - 模拟移动向量，包含 `x` 和 `y`。
 - `vehicleRotation` - `Rot` (可选) - 载具旋转，包含 `yaw` 和 `pitch`。
+- `interactRotation` - `Rot` (可选) - 交互旋转，包含 `yaw` 和 `pitch`。
+- `cameraOrientation` - `Pos` (可选) - 相机方向，包含 `x`, `y`, `z` 。
+- `cameraOrientation` - `Pos` (可选) - 相机方向，包含 `x`, `y`, `z` 。
 - `move` - `Object` (可选) - 玩家移动数据，包含 `x` 和 `y`。
+- `rawMove` - `Object` (可选) - 玩家移动数据，包含 `x` 和 `y`。
 - `inputMode` - `InputMode` (可选) - 输入模式，默认为触控。
 - `playMode` - `PlayMode` (可选) - 游戏模式，默认为屏幕模式。
 - `newInteractionModel` - `number` (可选) - 新交互模型，默认为经典模型。
@@ -515,3 +519,62 @@ packet.writeUnsignedInt64(18446744073709551615n);
 **注意事项**:
 
 * 必须使用 `BigInt` 表示。
+
+---
+
+### Packet.writeString
+
+**描述**:
+向数据包写入一个字符串（UTF-8 编码）。
+
+**参数**:
+
+* `value` - `string` - 要写入的数据字符串
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+let packet = new Packet();
+packet.writeString("Hello World");
+```
+
+**注意事项**:
+
+* 字符串会以 UTF-8 编码写入。
+* 若 `Packet` 已被销毁，将抛出异常。
+
+---
+
+### Packet.writeBytes
+
+**描述**:
+向数据包直接写入一段原始字节数据。
+
+**参数**:
+
+* `buffer` - `ArrayBuffer` - 要写入的字节缓冲区
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+let packet = new Packet();
+let buf = new ArrayBuffer(4);
+let view = new Uint8Array(buf);
+view[0] = 1;
+view[1] = 2;
+view[2] = 3;
+view[3] = 4;
+
+packet.writeBytes(buf);
+```
+
+**注意事项**:
+
+* 该方法不会写入长度信息，仅原样追加字节数据。
+* 需要确保协议层能够正确解析这些字节。
+* 若 `Packet` 已被销毁，将抛出异常。
+
