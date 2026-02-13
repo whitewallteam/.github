@@ -592,7 +592,7 @@
 | 5  | 快捷传送菜单  | fun_teleport_menu        |
 | 6  | 物品编辑器   | fun_item_editor          |
 | 7  | 网络数据包管理 | fun_network_packet_mgr   |
-| 8  | 花雨庭远程商店 | fun_open_shop            |
+| 8  | 无受伤抖动   | fun_no_hurt_camera       |
 | 9  | 自动瞄准    | fun_aimbot               |
 | 10 | 踏空      | fun_air_jump             |
 | 11 | 冲刺      | fun_air_sprint           |
@@ -613,7 +613,7 @@
 | 26 | 点击传送    | fun_click_teleport       |
 | 27 | 无粒子生成   | fun_no_particle          |
 | 28 | 麒麟臂     | fun_fast_destroy         |
-| 29 | 快速添加物品  | fun_fast_add_item        |
+| 29 | 自定义雾颜色  | fun_fog_color            |
 | 30 | 游戏变速    | fun_timer                |
 | 31 | 实体碰撞箱   | fun_hitbox               |
 | 32 | 高跳      | fun_jump_high            |
@@ -649,9 +649,10 @@
 | 62 | 自由视角    | fun_free_camera          |
 | 63 | 快速建造    | fun_fast_build           |
 | 64 | 方块渲染    | fun_block_render         |
-| 66 | 实体事件管理器 | fun_entity_event_manager |
+| 66 | 自定义实体颜色 | fun_mob_color            |
 | 67 | 矿物透视    | fun_xray                 |
 | 68 | 崩溃服务器   | fun_crash_server         |
+| 69 | 自定义受击颜色 | fun_hurt_color           |
 | 70 | 背包移动    | fun_inventory_move       |
 | 71 | 联机假名    | fun_fake_name            |
 | 73 | 方块轮廓    | fun_block_outline        |
