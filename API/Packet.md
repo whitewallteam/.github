@@ -161,6 +161,71 @@ console.log("Command Sent: " + isCommandSent);
 
 ---
 
+### sendNetworkPacket
+
+**描述**:
+发送一个网络数据包到服务器。
+
+**参数**:
+
+* `id` - `number` - 数据包 ID
+* `buffer` - `ByteBuffer` - 数据包二进制数据
+
+**返回值**: `boolean`
+
+* `true`：发送成功
+* `false`：参数错误
+
+**示例代码**:
+
+```javascript
+let id = 0x01;
+let buffer = new ByteBuffer(...);
+
+let result = sendNetworkPacket(id, buffer);
+```
+
+**注意事项**:
+
+* 必须传入正确的包 ID 和 ByteBuffer。
+* 数据会被解析为对应的数据包结构后发送。
+* 若当前没有本地玩家，则发送失败。
+
+---
+
+### sendLocalPacket
+
+**描述**:
+发送一个本地数据包（通常用于模块或客户端内部处理，不直接发送到服务器）。
+
+**参数**:
+
+* `id` - `number` - 数据包 ID
+* `buffer` - `ByteBuffer` - 数据包二进制数据
+
+**返回值**: `boolean`
+
+* `true`：发送成功
+* `false`：参数错误
+
+**示例代码**:
+
+```javascript
+let id = 0x01;
+let buffer = new ByteBuffer(...);
+
+let result = sendLocalPacket(id, buffer);
+```
+
+**注意事项**:
+
+* 数据会被解析为数据包对象后交由本地模块处理。
+* 不会发送到服务器，仅在客户端内部流转。
+* 依赖 `NetworkPacketManager` 模块存在，否则发送失败。
+
+---
+
+
 ## Packet
 
 **描述**:
@@ -186,7 +251,7 @@ let packet = new Packet();
 
 **参数**:
 
-* `packetId` - `number` - 数据包 ID（MinecraftPacketIds）
+* `packetId` - `number` - 数据包 ID
 
 **返回值**:
 
@@ -206,6 +271,40 @@ let result = packet.send(0x01);
 **注意事项**:
 
 * 必须在写入完所有数据后再调用。
+* 若 `Packet` 已被销毁，将抛出异常。
+
+---
+
+### Packet.sendToLocal
+
+**描述**:
+将当前构建的数据包发送到本地（客户端侧处理），而不是发送到服务器。
+
+**参数**:
+
+* `packetId` - `number` - 数据包 ID
+
+**返回值**:
+
+* `boolean`
+
+  * `true`：发送成功
+  * `false`：未找到本地网络模块，发送失败
+
+**示例代码**:
+
+```javascript
+let packet = new Packet();
+packet.writeVarInt(123);
+
+// 发送到本地客户端处理
+let result = packet.sendToLocal(0x01);
+```
+
+**注意事项**:
+
+* 与 `send` 不同，此方法不会将数据包发送到服务器。
+* 适用于触发客户端本地逻辑（例如模拟接收包）。
 * 若 `Packet` 已被销毁，将抛出异常。
 
 ---

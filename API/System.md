@@ -653,3 +653,113 @@ System.writeAddress(ptr, 100, data);
 ```
 
 **注意事项**: 请谨慎使用该方法，可能会导致程序崩溃或数据丢失。
+
+---
+
+### getCurrentThreadName
+
+**描述**:
+获取当前脚本运行所在的线程名称。
+
+**参数**: 无
+
+**返回值**:
+
+* `string` - 当前线程名称
+
+**示例代码**:
+
+```javascript
+let name = getCurrentThreadName();
+console.log("当前线程:", name);
+```
+
+**注意事项**:
+
+* 返回值取决于当前执行环境（UI线程、游戏线程等）。
+
+---
+
+### runOnUiThread
+
+**描述**:
+将指定函数调度到 UI 线程执行。
+
+**参数**:
+
+* `callback` - `function` - 要在 UI 线程执行的函数
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+runOnUiThread(() => {
+    console.log("运行在UI线程");
+});
+```
+
+**注意事项**:
+
+* 参数必须是函数，否则会抛出异常。
+* 回调函数会被异步执行。
+* 执行时会自动切换到对应的脚本引擎上下文。
+
+---
+
+### runOnGameThread
+
+**描述**:
+将指定函数调度到游戏线程执行。
+
+**参数**:
+
+* `callback` - `function` - 要在游戏线程执行的函数
+
+**返回值**: 无
+
+**示例代码**:
+
+```javascript
+runOnGameThread(() => {
+    console.log("运行在游戏线程");
+});
+```
+
+**注意事项**:
+
+* 参数必须是函数，否则会抛出异常。
+* 回调函数会被异步执行。
+* 当前实现与 UI 线程调度逻辑一致（实际调用 UI 线程），需确认是否为预期行为。
+
+---
+
+### getRuntimeVersion
+
+**描述**:
+获取当前运行环境的版本信息，包括插件版本和游戏版本。
+
+**参数**: 无
+
+**返回值**: `object` - 包含版本信息的对象，结构如下：
+
+* `pluginVersionCode` - `number` - 插件版本号（数值）
+* `pluginVersionName` - `string` - 插件版本名称
+* `gameVersionCode` - `number` - 游戏版本号（数值）
+* `gameVersionName` - `string` - 游戏版本名称
+
+**示例代码**:
+
+```javascript
+let info = getRuntimeVersion();
+
+console.log(info.pluginVersionCode);
+console.log(info.pluginVersionName);
+console.log(info.gameVersionCode);
+console.log(info.gameVersionName);
+```
+
+**注意事项**:
+
+* 返回对象始终包含完整字段。
+* 所有版本信息均来自当前运行环境实例。

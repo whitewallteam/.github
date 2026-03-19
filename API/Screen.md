@@ -407,3 +407,119 @@ simulateButtonUp("jump");
 **注意事项**:
 
 * 需要确保传入的按钮名称合法，否则不会执行任何操作。
+
+---
+
+### createShape
+
+**描述**:
+创建一个形状，并返回该形状的唯一 ID。
+
+**参数**:
+
+* `options` - `object` - 形状配置对象
+
+    * `type` - `string` - 类型
+    * `visible` - `boolean` - 是否可见（默认 `true`）
+    * `isFill` - `boolean` - 是否填充（默认 `false`，即线框）
+    * `lower` - `object` - 最小坐标
+
+        * `x` - `number`
+        * `y` - `number`
+        * `z` - `number`
+    * `upper` - `object` - 最大坐标
+
+        * `x` - `number`
+        * `y` - `number`
+        * `z` - `number`
+    * `color` - `object` - 颜色（RGBA）
+
+        * `r` - `number`
+        * `g` - `number`
+        * `b` - `number`
+        * `a` - `number`
+
+**返回值**: `number` - 形状 ID
+
+**示例代码**:
+
+```javascript
+let id = createShape({
+    type: 'box',
+    visible: true,
+    visible: true,
+    isFill: false,
+    lower: { x: 0, y: 0, z: 0 },
+    upper: { x: 1, y: 1, z: 1 },
+    color: { r: 1, g: 0, b: 0, a: 1 }
+});
+```
+
+**注意事项**:
+
+* 必须传入对象参数。
+* `lower` 和 `upper` 必须同时存在才会生效。
+* 颜色范围通常为 `0.0 ~ 1.0`。
+
+---
+
+### updateShape
+
+**描述**:
+更新指定形状的属性（可见性、填充状态、范围、颜色等）。
+
+**参数**:
+
+* `id` - `number` - 形状 ID
+* `options` - `object` - 更新配置（同 `createShape`，但所有字段可选）
+
+**返回值**:
+
+* `boolean`
+
+    * `true`：更新成功
+    * `false`：参数错误或形状不存在
+
+**示例代码**:
+
+```javascript
+updateShape(id, {
+    visible: false,
+    isFill: true,
+    color: { r: 0, g: 1, b: 0, a: 1 }
+});
+```
+
+**注意事项**:
+
+* 仅会更新传入的字段，未提供的字段保持不变。
+* 若形状不存在，返回 `false`。
+
+---
+
+### removeShape
+
+**描述**:
+移除指定的形状。
+
+**参数**:
+
+* `id` - `number` - 形状 ID
+
+**返回值**:
+
+* `boolean`
+
+    * `true`：移除成功
+    * `false`：参数无效
+
+**示例代码**:
+
+```javascript
+removeShape(id);
+```
+
+**注意事项**:
+
+* 调用后该 ID 对应的形状将被销毁。
+* 重复删除同一 ID 不会报错，但可能无效果。

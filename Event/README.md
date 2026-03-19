@@ -30,15 +30,15 @@ function onCallModuleEvent(args) {
 - `x` - `number` - X 坐标
 - `y` - `number` - Y 坐标
 - `z` - `number` - Z 坐标
-- `side` - `number` - 方块的侧面
+- `face` - `number` - 目标方块的朝向
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **示例代码**:
 
 ```javascript
-function onPlayerBuildBlockEvent(playerId, x, y, z, side) {
-    console.log(`Player ${playerId} built a block at (${x}, ${y}, ${z}) on side ${side}`);
+function onPlayerBuildBlockEvent(playerId, x, y, z, face) {
+    console.log(`Player ${playerId} built a block at (${x}, ${y}, ${z}) on face ${face}`);
     return false; // 不拦截事件
 }
 ```
@@ -57,15 +57,41 @@ function onPlayerBuildBlockEvent(playerId, x, y, z, side) {
 - `x` - `number` - X 坐标
 - `y` - `number` - Y 坐标
 - `z` - `number` - Z 坐标
-- `side` - `number` - 方块的侧面
+- `face` - `number` - 目标方块的朝向
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **示例代码**:
 
 ```javascript
-function onPlayerDestroyBlockEvent(playerId, x, y, z, side) {
-    console.log(`Player ${playerId} destroyed a block at (${x}, ${y}, ${z}) on side ${side}`);
+function onPlayerDestroyBlockEvent(playerId, x, y, z, face) {
+    console.log(`Player ${playerId} destroyed a block at (${x}, ${y}, ${z}) on face ${face}`);
+    return false; // 不拦截事件
+}
+```
+
+**注意事项**: 无
+
+---
+
+## onPlayerStartDestroyBlockEvent
+
+**描述**: 玩家准备破坏方块时触发(返回值为 true 表示拦截事件发生)。
+
+**参数**:
+
+- `x` - `number` - X 坐标
+- `y` - `number` - Y 坐标
+- `z` - `number` - Z 坐标
+- `face` - `number` - 目标方块的朝向
+
+**返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
+
+**示例代码**:
+
+```javascript
+function onPlayerStartDestroyBlockEvent(x, y, z, face) {
+    console.log(`destroy a block at (${x}, ${y}, ${z}) on face ${face}`);
     return false; // 不拦截事件
 }
 ```
@@ -85,15 +111,15 @@ function onPlayerDestroyBlockEvent(playerId, x, y, z, side) {
 - `x` - `number` - X 坐标
 - `y` - `number` - Y 坐标
 - `z` - `number` - Z 坐标
-- `side` - `number` - 方块的侧面
+- `face` - `number` - 目标方块的朝向
 
 **返回值**: `boolean` - 返回 `true` 拦截事件，返回 `false` 继续执行
 
 **示例代码**:
 
 ```javascript
-function onPlayerUseItemEvent(playerId, itemId, x, y, z, side) {
-    console.log(`Player ${playerId} used item ${itemId} at (${x}, ${y}, ${z}) on side ${side}`);
+function onPlayerUseItemEvent(playerId, itemId, x, y, z, face) {
+    console.log(`Player ${playerId} used item ${itemId} at (${x}, ${y}, ${z}) on face ${face}`);
     return false; // 不拦截事件
 }
 ```

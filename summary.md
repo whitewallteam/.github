@@ -18,6 +18,7 @@
   * [数据包](API/Packet.md)
   * [屏幕](API/Screen.md)
   * [菜单](API/UI.md)
+  * [加密](API/Crypto.md)
 
 * 事件类
 
@@ -63,6 +64,7 @@
   * [2025-11-25](ChangeLog/2025-11-25.md)
   * [2025-12-26](ChangeLog/2025-12-26.md)
   * [2026-02-10](ChangeLog/2026-02-10.md)
+  * [2026-03-19](ChangeLog/2026-03-19.md)
 
 
 
