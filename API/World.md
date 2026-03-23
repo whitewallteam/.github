@@ -3,7 +3,7 @@
 
 **描述**: 获取玩家列表。
 
-**参数**: 无
+**参数**: `string` - 列表类型(`RuntimeId`) (可选)
 
 **返回值**: `array(string)` - 玩家ID列表
 
@@ -11,6 +11,8 @@
 ```javascript
 let playerList = getPlayerList();
 console.log("Player List: ", playerList);
+let playerList2 = getPlayerList('RuntimeId');
+console.log("Player List2: ", playerList2);
 ```
 
 **注意事项**: 无
@@ -212,7 +214,7 @@ console.log("Entity Removed: " + isEntityRemoved);
 
 **示例代码**:
 ```javascript
-let structure = findStructure(100, 64, 100, "Village");
+let structure = findStructure(100, 64, 100, "minecraft:village");
 console.log("Found Structure: ", structure);
 ```
 

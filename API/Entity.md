@@ -221,7 +221,7 @@ console.log("Is Motion Set: " + isMotionSet);
 
 **描述**: 获取实体列表。
 
-**参数**: 无
+**参数**: `string` - 列表类型(`RuntimeId`) (可选)
 
 **返回值**: `array(string)` - 实体ID列表
 
@@ -229,6 +229,8 @@ console.log("Is Motion Set: " + isMotionSet);
 ```javascript
 let entityList = getEntityList();
 console.log("Entity List: ", entityList);
+let entityList2 = getEntityList('RuntimeId');
+console.log("Entity List2: ", entityList2);
 ```
 
 **注意事项**: 无

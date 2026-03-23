@@ -17,6 +17,24 @@ console.log("Local Player Unique ID: " + playerID);
 
 ---
 
+### getLocalPlayerRuntimeID
+
+**描述**: 获取本地玩家运行时标识。
+
+**参数**: 无
+
+**返回值**: `string` - 本地玩家运行时标识
+
+**示例代码**:
+```javascript
+let playerID = getLocalPlayerRuntimeID();
+console.log("Local Player Runtime ID: " + playerID);
+```
+
+**注意事项**: 无
+
+---
+
 ### playerJump
 
 **描述**: 玩家跳跃。
@@ -875,3 +893,94 @@ deleteContainer();
 
 * 该操作不可逆，请确保不再需要当前容器数据后再调用此函数。
 * 仅对本地玩家有效。
+
+---
+
+### getPlayerAbilities
+
+**描述**:
+获取指定玩家的所有能力（Abilities），并以对象形式返回。
+
+**参数**:
+
+* `playerId` - `string` - 玩家唯一标识（用于查找玩家实体）
+
+**返回值**:
+
+* `object` - 玩家能力对象（键为能力名称，值为 `boolean` 或 `number`）
+
+**示例代码**:
+
+```javascript
+let abilities = getPlayerAbilities("player123");
+console.log(abilities.mayfly);
+console.log(abilities.walkSpeed);
+```
+
+**注意事项**:
+
+* 仅当目标为玩家实体时才会返回有效数据。
+* 返回的能力字段类型可能为 `boolean` 或 `number`（float）。
+* 若玩家不存在或参数错误，返回空对象。
+
+---
+
+### setPlayerAbilities
+
+**描述**:
+设置指定玩家的能力属性。
+
+**参数**:
+
+* `playerId` - `string` - 玩家唯一标识
+* `abilities` - `object` - 要设置的能力对象（键为能力名称）
+
+**返回值**:
+
+* `boolean` - 是否设置成功
+
+**示例代码**:
+
+```javascript
+setPlayerAbilities("player123", {
+    mayfly: true,
+    walkSpeed: 0.2
+});
+```
+
+**注意事项**:
+
+* 仅会修改传入对象中存在的字段。
+* 数值类型会设置为 float，布尔类型设置为 bool。
+* 若玩家不存在或参数错误，返回空值。
+
+---
+
+### getPlayerBlockDestroyTime
+
+**描述**:
+获取玩家使用指定物品破坏某方块的速度。
+
+**参数**:
+
+* `playerId` - `string` - 玩家唯一标识
+* `slot` - `number` - 物品栏槽位
+* `blockName` - `string` - 方块名称
+
+**返回值**:
+
+* `number` - 破坏速度（数值越大表示越快）
+
+**示例代码**:
+
+```javascript
+let speed = getPlayerBlockDestroyTime("player123", 0, "minecraft:stone");
+console.log("破坏速度:", speed);
+```
+
+**注意事项**:
+
+* 方块名称必须有效，否则返回空值。
+* 仅对玩家实体有效。
+* 返回值受玩家状态和工具影响。
+
