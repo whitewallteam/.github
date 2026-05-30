@@ -96,22 +96,59 @@ console.log("Entity Rotation: ", rotation);
 
 ### setEntityRot
 
-**描述**: 设置实体视角角度。
+**描述**:
+设置实体当前旋转角度（Pitch 和 Yaw）。
 
 **参数**:
-- `id` - `string` - 实体唯一标识
-- `pitch` - `number` - 俯仰角
-- `yaw` - `number` - 偏航角
 
-**返回值**: `boolean` - 设置成功返回 `true`，否则返回 `false`
+* `entityId` - `string` - 实体唯一标识
+* `pitch` - `number` - 俯仰角（X 轴旋转）
+* `yaw` - `number` - 水平角（Y 轴旋转）
+
+**返回值**:
+
+* `boolean` - 是否设置成功
 
 **示例代码**:
+
 ```javascript
-let didSetRot = setEntityRot('entityId',45, 90);
-console.log("Entity Rotation Set: " + didSetRot);
+setEntityRot(entityId, 30, 90);
 ```
 
-**注意事项**: 无
+**注意事项**:
+
+* 仅对存在的实体生效。
+* 参数顺序为 `(pitch, yaw)`。
+* 设置的是实体当前旋转值。
+
+---
+
+### setEntityRotPrev
+
+**描述**:
+设置实体上一帧的旋转角度（Pitch 和 Yaw）。
+
+**参数**:
+
+* `entityId` - `string` - 实体唯一标识
+* `pitch` - `number` - 上一帧俯仰角
+* `yaw` - `number` - 上一帧水平角
+
+**返回值**:
+
+* `boolean` - 是否设置成功
+
+**示例代码**:
+
+```javascript
+setEntityRotPrev(entityId, 25, 85);
+```
+
+**注意事项**:
+
+* 仅对存在的实体生效。
+* 通常用于修改实体旋转插值效果。
+* 设置的是实体上一帧旋转值。
 
 ---
 
@@ -136,21 +173,56 @@ console.log("Entity Body Rotation Get: " + result);
 
 ### setEntityBodyRot
 
-**描述**: 设置实体身体角度。
+**描述**:
+设置实体身体当前朝向角度。
 
 **参数**:
-- `id` - `string` - 实体唯一标识
-- `rot` - `number` - 角度
 
-**返回值**: `boolean` - 设置成功返回 `true`，否则返回 `false`
+* `entityId` - `string` - 实体唯一标识
+* `yaw` - `number` - 身体水平朝向角度
+
+**返回值**:
+
+* `boolean` - 是否设置成功
 
 **示例代码**:
+
 ```javascript
-let result = setEntityBodyRot('entityId',10);
-console.log("ok: " + result);
+setEntityBodyRot(entityId, 180);
 ```
 
-**注意事项**: 无
+**注意事项**:
+
+* 仅对存在的实体生效。
+* 修改的是身体朝向，不一定影响头部朝向。
+
+---
+
+### setEntityBodyRotPrev
+
+**描述**:
+设置实体身体上一帧的朝向角度。
+
+**参数**:
+
+* `entityId` - `string` - 实体唯一标识
+* `yaw` - `number` - 上一帧身体朝向角度
+
+**返回值**:
+
+* `boolean` - 是否设置成功
+
+**示例代码**:
+
+```javascript
+setEntityBodyRotPrev(entityId, 170);
+```
+
+**注意事项**:
+
+* 仅对存在的实体生效。
+* 通常用于调整身体旋转的平滑过渡效果。
+* 设置的是身体上一帧朝向值。
 
 ---
 
