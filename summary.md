@@ -22,7 +22,7 @@
     * [Options](API/v2/Options.md)
     * [Media](API/v2/Media.md)
     * [Menu](API/v2/Menu.md)
-    * [Sp](API/v2/SP.md)
+    * [Sp](API/v2/Sp.md)
     * [Network](API/v2/Network.md)
     * [Socket](API/v2/Socket.md)
     * [NetEase](API/v2/NetEase.md)
