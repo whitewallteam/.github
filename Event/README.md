@@ -401,7 +401,7 @@ function onPyRpcReceiveEvent(id, data, json) {
 
 - `input` - `PlayerAuthInput` - 玩家授权输入数据
 
-**返回值**: 无
+**返回值**: null / PlayerAuthInput
 
 **示例代码**:
 
