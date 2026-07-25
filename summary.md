@@ -1,8 +1,7 @@
 * 开始
 
-    * [入门](README.md)
+    * [指南](README.md)
     * [Discord](discord.md)
-    * [指南](guide.md)
 
 * 接口类 (新版)
 
@@ -64,7 +63,6 @@
 
 * 示例代码
 
-    * [建筑工具](Code/BuildTool.md)
     * [自动剪羊毛](Code/AutoSheep.md)
     * [命令方块编辑](Code/CommandBlockEdit.md)
     * [RPC通讯](Code/RPC.md)
