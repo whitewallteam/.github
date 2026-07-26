@@ -33,6 +33,7 @@
     * [Gui](API/v2/Gui.md)
     * [I18n](API/v2/I18n.md)
     * [App](API/v2/App.md)
+    * [ImGui](API/v2/ImGui.md)
 
 * 接口类 (旧版)
 
