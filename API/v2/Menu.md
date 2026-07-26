@@ -20,10 +20,10 @@ menu.load(name, root);
 
 #### 参数
 
-| 参数 | 类型   | 必填 | 说明           |
-|------|--------|------|----------------|
-| name | string | 是   | 菜单名称       |
-| root | string | 是   | 菜单根目录路径 |
+| 参数 | 类型   | 必填 | 说明     |
+|------|--------|------|----------|
+| name | string | 是   | 菜单名称 |
+| root | string | 是   | 菜单JSON |
 
 #### 返回值
 
@@ -34,7 +34,7 @@ menu.load(name, root);
 ```javascript
 const menu = require("menu");
 
-const result = menu.load("test", "/sdcard/menu");
+const result = menu.load("test", '{}');
 
 console.log(result);
 ```
