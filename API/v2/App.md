@@ -188,7 +188,7 @@ console.log(app.getFilesDir());
 
 ### executePluginCommand
 
-执行插件命令注册。
+执行插件命令。
 
 #### 语法
 

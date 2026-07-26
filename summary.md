@@ -14,6 +14,7 @@
     * [Player](API/v2/Player.md)
     * [LocalPlayer](API/v2/LocalPlayer.md)
     * [Item](API/v2/Item.md)
+    * [Block](API/v2/Block.md)
     * [NBT](API/v2/NBT.md)
     * [Packet](API/v2/Packet.md)
     * [Camera](API/v2/Camera.md)

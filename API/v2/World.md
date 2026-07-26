@@ -124,8 +124,8 @@ new Shape(options);
 |---------|---------|------|------------------------------|------------------|
 | visible | boolean | 否   | `true`                       | 是否显示图形。   |
 | isFill  | boolean | 否   | `false`                      | 是否填充显示。   |
-| lower   | Vector3 | 是   | -                            | 包围盒最小坐标。 |
-| upper   | Vector3 | 是   | -                            | 包围盒最大坐标。 |
+| lower   | Vec3    | 是   | -                            | 包围盒最小坐标。 |
+| upper   | Vec3    | 是   | -                            | 包围盒最大坐标。 |
 | color   | Color   | 否   | `{ r: 0, g: 0, b: 0, a: 0 }` | 图形颜色。       |
 
 #### 返回值
@@ -222,7 +222,7 @@ shape.isFill = true;
 #### 类型
 
 ```javascript
-Vector3
+Vec3
 ```
 
 #### 可读
@@ -252,7 +252,7 @@ shape.lower = {
 #### 类型
 
 ```javascript
-Vector3
+Vec3
 ```
 
 #### 可读

@@ -1,4 +1,3 @@
-# block
 
 `block` 模块提供 Minecraft 方块相关 API，包括方块状态查询、方块实体数据读取、命令方块修改以及方块实体数据更新等功能。
 
@@ -14,60 +13,60 @@ const block = require("block");
 
 表示一个 Minecraft 方块状态对象。
 
-## 构造方法
+#### 构造方法
 
-### 语法
+#### 语法
 
 ```javascript
-new block.Block(name, state);
+new Block(name, state);
 ```
 
-### 参数
+#### 参数
 
 | 参数  | 类型   | 必填 | 说明       |
 |-------|--------|------|------------|
 | name  | string | 是   | 方块名称   |
 | state | number | 否   | 方块状态值 |
 
-### 示例
+#### 示例
 
 ```javascript
 const block = require("block");
 
-const stone = new block.Block("minecraft:stone");
+const stone = new Block("minecraft:stone");
 ```
 
 指定状态：
 
 ```javascript
-const blockState = new block.Block(
+const blockState = new Block(
     "minecraft:oak_log",
     1
 );
 ```
 
-### 注意
+#### 注意
 
 * 必须使用 `new` 创建实例。
 * 方块不存在时会抛出异常。
 
 ---
 
-## Block.getData
+### getData
 
-获取方块数据。
+获取方块数据值。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getData();
+getData();
 ```
 
-### 返回值
+#### 返回值
 
-返回方块内部数据。
+返回方块数据值。
 
-### 示例
+#### 示例
 
 ```javascript
 const data = stone.getData();
@@ -75,23 +74,23 @@ const data = stone.getData();
 
 ---
 
-## Block.getRuntimeId
+### getRuntimeId
 
 获取方块 Runtime ID。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getRuntimeId();
+getRuntimeId();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明          |
 |--------|---------------|
 | number | 方块运行时 ID |
 
-### 示例
+#### 示例
 
 ```javascript
 console.log(stone.getRuntimeId());
@@ -99,17 +98,17 @@ console.log(stone.getRuntimeId());
 
 ---
 
-## Block.getItemId
+### getItemId
 
 获取对应方块物品 ID。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getItemId();
+getItemId();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明        |
 |--------|-------------|
@@ -117,17 +116,17 @@ block.getItemId();
 
 ---
 
-## Block.getDescriptionId
+### getDescriptionId
 
 获取方块描述 ID。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getDescriptionId();
+getDescriptionId();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明         |
 |--------|--------------|
@@ -136,22 +135,22 @@ block.getDescriptionId();
 示例：
 
 ```javascript
-console.log(block.getDescriptionId());
+console.log(getDescriptionId());
 ```
 
 ---
 
-## Block.getDescriptionName
+### getDescriptionName
 
 获取方块显示名称。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getDescriptionName();
+getDescriptionName();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明         |
 |--------|--------------|
@@ -159,17 +158,17 @@ block.getDescriptionName();
 
 ---
 
-## Block.getNamespace
+### getNamespace
 
 获取方块命名空间。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getNamespace();
+getNamespace();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明         |
 |--------|--------------|
@@ -178,23 +177,23 @@ block.getNamespace();
 示例：
 
 ```javascript
-console.log(block.getNamespace());
+console.log(getNamespace());
 // minecraft
 ```
 
 ---
 
-## Block.getExplosionResistance
+### getExplosionResistance
 
 获取爆炸抗性。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getExplosionResistance();
+getExplosionResistance();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明     |
 |--------|----------|
@@ -202,17 +201,17 @@ block.getExplosionResistance();
 
 ---
 
-## Block.getLightEmission
+### getLightEmission
 
 获取光照发射等级。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getLightEmission();
+getLightEmission();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明     |
 |--------|----------|
@@ -220,17 +219,17 @@ block.getLightEmission();
 
 ---
 
-## Block.getLightAbsorption
+### getLightAbsorption
 
 获取光照吸收等级。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getLightAbsorption();
+getLightAbsorption();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明       |
 |--------|------------|
@@ -238,17 +237,17 @@ block.getLightAbsorption();
 
 ---
 
-## Block.isSolid
+### isSolid
 
 判断方块是否为实体方块。
 
-### 语法
+#### 语法
 
 ```javascript
-block.isSolid();
+isSolid();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型    | 说明           |
 |---------|----------------|
@@ -264,47 +263,47 @@ if (stone.isSolid()) {
 
 ---
 
-## Block.getNBT
+### getNBT
 
 获取方块 NBT 数据。
 
-### 语法
+#### 语法
 
 ```javascript
-block.getNBT();
+getNBT();
 ```
 
-### 返回值
+#### 返回值
 
 | 类型   | 说明               |
 |--------|--------------------|
 | string | Mojangson 格式 NBT |
 
-### 示例
+#### 示例
 
 ```javascript
-console.log(block.getNBT());
+console.log(getNBT());
 ```
 
 ---
 
-# block.setCommandBlock
+# setCommandBlock
 
 修改命令方块数据。
 
-### 语法
+#### 语法
 
 ```javascript
-block.setCommandBlock(data);
+setCommandBlock(data);
 ```
 
-### 参数
+#### 参数
 
 | 参数 | 类型   | 必填 | 说明         |
 |------|--------|------|--------------|
 | data | object | 是   | 命令方块数据 |
 
-### data 参数
+#### data 参数
 
 | 字段               | 类型          | 必填 | 说明         |
 |--------------------|---------------|------|--------------|
@@ -321,7 +320,7 @@ block.setCommandBlock(data);
 | executeOnFirstTick | boolean       | 否   | 首 Tick 执行 |
 | isBlock            | boolean       | 否   | 是否方块模式 |
 
-### mode 支持
+#### mode 支持
 
 字符串形式：
 
@@ -331,12 +330,12 @@ block.setCommandBlock(data);
 | Repeating | 循环命令方块 |
 | Chain     | 连锁命令方块 |
 
-### 示例
+#### 示例
 
 ```javascript
 const block = require("block");
 
-block.setCommandBlock({
+setCommandBlock({
     pos: {
         x: 0,
         y: 64,
@@ -348,31 +347,31 @@ block.setCommandBlock({
 });
 ```
 
-### 注意
+#### 注意
 
 * 必须处于游戏内。
 * 需要当前玩家存在。
 
 ---
 
-# block.setBlockEntityData
+# setBlockEntityData
 
 更新方块实体数据。
 
-### 语法
+#### 语法
 
 ```javascript
-block.setBlockEntityData(position, nbt);
+setBlockEntityData(position, nbt);
 ```
 
-### 参数
+#### 参数
 
 | 参数     | 类型   | 必填 | 说明               |
 |----------|--------|------|--------------------|
 | position | object | 是   | 方块坐标           |
 | nbt      | string | 是   | Mojangson 格式 NBT |
 
-### position 格式
+#### position 格式
 
 ```text
 {
@@ -382,10 +381,10 @@ block.setBlockEntityData(position, nbt);
 }
 ```
 
-### 示例
+#### 示例
 
 ```javascript
-block.setBlockEntityData(
+setBlockEntityData(
     {
         x: 10,
         y: 64,
@@ -395,7 +394,7 @@ block.setBlockEntityData(
 );
 ```
 
-### 注意
+#### 注意
 
 * 必须处于游戏内。
 * 需要当前玩家存在。
