@@ -488,3 +488,110 @@ item.setNBT(nbt);
 ```javascript
 item.setNBT('{Count:1,id:"minecraft:diamond"}');
 ```
+
+---
+
+## reinit
+
+重新初始化物品对象。
+
+#### 参数
+
+| 类型   | 名称  | 说明                           |
+|--------|-------|--------------------------------|
+| string | name  | 物品的名称或类型标识。         |
+| number | count | 物品数量。                     |
+| number | aux   | 物品附加值，可选，默认为 `0`。 |
+
+#### 返回值
+
+无。
+
+#### 示例
+
+```javascript
+item.reinit("minecraft:diamond", 64);
+```
+
+指定附加值：
+
+```javascript
+item.reinit("minecraft:wool", 1, 14);
+```
+
+#### 注意事项
+
+* `name` 必须为字符串。
+* `count` 必须为数字。
+* `aux` 为可选参数，仅在传入数字时生效。
+* 当参数数量少于 2 个，或者 `name`、`count` 类型不正确时，会抛出 `Invalid argument` 异常。
+
+## setNull
+
+将物品对象设置为空物品。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+无。
+
+#### 示例
+
+```javascript
+item.setNull();
+```
+
+#### 注意事项
+
+调用该方法后，当前 `Item` 对象内部的物品数据会被设置为空。
+
+## toString
+
+获取物品的字符串表示。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+| 类型   | 说明                   |
+|--------|------------------------|
+| string | 当前物品的字符串表示。 |
+
+#### 示例
+
+```javascript
+const str = item.toString();
+
+console.log(str);
+```
+
+---
+
+## toDebugString
+
+获取物品的调试字符串表示。
+
+与 `toString()` 相比，该方法用于获取更加详细的调试信息。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+| 类型   | 说明                   |
+|--------|------------------------|
+| string | 当前物品的调试字符串。 |
+
+#### 示例
+
+```javascript
+const debug = item.toDebugString();
+
+console.log(debug);
+```

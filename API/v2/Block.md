@@ -335,7 +335,7 @@ setCommandBlock(data);
 ```javascript
 const block = require("block");
 
-setCommandBlock({
+block.setCommandBlock({
     pos: {
         x: 0,
         y: 64,
@@ -384,7 +384,9 @@ setBlockEntityData(position, nbt);
 #### 示例
 
 ```javascript
-setBlockEntityData(
+const block = require("block");
+
+block.setBlockEntityData(
     {
         x: 10,
         y: 64,

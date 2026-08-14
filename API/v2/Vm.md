@@ -118,9 +118,10 @@ vm.createSnapshot(source);
 
 #### 参数
 
-| 参数   | 类型   | 必填 | 说明                                   |
-|--------|--------|------|----------------------------------------|
-| source | string | 是   | 用于创建 Snapshot 的 JavaScript 源代码 |
+| 参数      | 类型    | 必填 | 说明                                   |
+|-----------|---------|------|----------------------------------------|
+| source    | string  | 是   | 用于创建 Snapshot 的 JavaScript 源代码 |
+| encryptor | boolean | 否   | 启用代码加密器                         |
 
 #### 返回值
 
@@ -156,10 +157,11 @@ vm.loadSnapshot(snapshot, entry);
 
 #### 参数
 
-| 参数     | 类型        | 必填 | 说明                                      |
-|----------|-------------|------|-------------------------------------------|
-| snapshot | ArrayBuffer | 是   | 由 `createSnapshot` 创建的 Snapshot 数据  |
-| entry    | string      | 否   | 加载后执行的入口函数名称，默认为 `main()` |
+| 参数      | 类型        | 必填 | 说明                                      |
+|-----------|-------------|------|-------------------------------------------|
+| snapshot  | ArrayBuffer | 是   | 由 `createSnapshot` 创建的 Snapshot 数据  |
+| entry     | string      | 否   | 加载后执行的入口函数名称，默认为 `main()` |
+| encryptor | boolean     | 否   | 启用代码加密器                            |
 
 #### 返回值
 
@@ -173,6 +175,7 @@ vm.loadSnapshot(snapshot, entry);
 const vm = require("vm");
 
 const snapshot = vm.createSnapshot(`
+    // entry function
     function main() {
         return "Snapshot Loaded";
     }
